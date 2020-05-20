@@ -7,6 +7,7 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -72,7 +73,36 @@ public class CalcularIMC_Controller extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        Double talla = Double.parseDouble(request.getParameter("txttalla"));
+        Double peso = Double.parseDouble(request.getParameter("txtpeso"));
+        Double imc, tallam;
+        
+        tallam = talla/100;
+        imc = peso / (tallam * tallam);
+        
+        String resultadoIMC = "";
+        
+        if (imc <= 18.5 ) {
+            resultadoIMC = "Por debajo del peso.";
+        } else if(imc <= 25){
+            resultadoIMC = "Con peso normal.";
+        } else if(imc <= 30){
+            resultadoIMC = "Con sobrepeso.";
+        } else if(imc <= 35){
+            resultadoIMC = "Obesidad leve.";
+        } else if(imc <= 39){
+            resultadoIMC = "Obesidad media.";
+        } else {
+            resultadoIMC = "Obesidad morbida.";
+        }
+        
+        String resultadoFinal = "Su valor IMC es " + imc.toString() + " y su diagnostico es "
+                + resultadoIMC;
+        request.setAttribute("resultado", resultadoFinal);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/frmIMC.jsp");
+        dispatcher.forward(request, response);
+        
     }
 
     /**

@@ -7,6 +7,7 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -72,7 +73,19 @@ public class AutenticacionController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        String usuario = request.getParameter("txtusuario");
+        String password = request.getParameter("txtpassword");
+        
+        String vista = "/login.jsp";
+        
+        if (usuario.equals("gutylabs") && password.equals("123456") ) {
+            vista = "/home.jsp";
+        }
+        
+        request.setAttribute("nomusuario", usuario);
+        RequestDispatcher dispatcher = request.getRequestDispatcher(vista);
+        dispatcher.forward(request, response);
     }
 
     /**

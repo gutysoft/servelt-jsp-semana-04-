@@ -34,7 +34,7 @@
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Inicio de Sesión</p>
 
-                    <form action="" method="post">
+                    <form action="AutenticacionController" method="post">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" name="txtusuario" placeholder="Usuario">
                             <div class="input-group-append">
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" name="txtcontrasena" placeholder="Contraseña">
+                            <input type="password" class="form-control" name="txtpassword" placeholder="Contraseña">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-lock"></span>

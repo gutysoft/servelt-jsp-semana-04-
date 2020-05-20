@@ -40,14 +40,84 @@
 
                                 <div class="card card-primary card-outline">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
+                                        
+                                        <div class="row">
+                                            
+                                            <div class="col-lg-4">
+                                                <div class="card">
+                                                    <div class="card-body login-card-body">
+                                                        
+
+                                                        <form action="CalcularIMC_Controller" method="post">
+                                                            <div class="input-group mb-3">
+                                                                <input type="text" class="form-control" name="txttalla" placeholder="Ingrese su talla (cm)">
+                                                                <div class="input-group-append">
+                                                                    <div class="input-group-text">
+                                                                        <span class="fas fa-text-height"></span>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-group mb-3">
+                                                                <input type="text" class="form-control" name="txtpeso" placeholder="Ingrese su peso (Kgr)">
+                                                                <div class="input-group-append">
+                                                                    <div class="input-group-text">
+                                                                        <span class="fas fa-weight"></span>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-8">
+
+                                                                </div>
+                                                                <!-- /.col -->
+                                                                <div class="col-4">
+                                                                    <button type="submit" class="btn btn-primary btn-block">Calcular</button>
+                                                                </div>
+                                                                <!-- /.col -->
+                                                            </div>
+                                                        </form>
+
+
+                                                    </div>
+                                                    <!-- /.login-card-body -->
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-8 card card-outline card-outline-primary">
+                                                <h1>
+                                                    Resultado
+                                                </h1>
+                                                
+                                                <%
+                                                    if(request.getAttribute("resultado") != null ){
+                                                        String resultadoimc = request.getAttribute("resultado").toString();
+                                                    
+                                                %>
+                                                <div class="alert alert-info">
+                                                    <%=resultadoimc%>
+                                                </div>     
+                                                   
+                                                <% } %>
+                                                    
+                                               
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    
+                                    
+                                    <div class="card-footer">
 
                                         <p class="card-text">
-                                            Calculadora IMC
+                                            &nbsp;
                                         </p>
-                                        <a href="#" class="card-link">Card link</a>
-                                        <a href="#" class="card-link">Another link</a>
+                                        
                                     </div>
+                                    
                                 </div><!-- /.card -->
                             </div>
                             <!-- /.col-md-6 -->

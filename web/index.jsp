@@ -13,7 +13,7 @@
     </head>
     <body>
         
-        <%@include file="layout.jsp" %>
+        <%@include file="login.jsp" %>
         
     </body>
 </html>

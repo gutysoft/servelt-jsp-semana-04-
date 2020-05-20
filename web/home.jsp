@@ -21,9 +21,8 @@
                                 <h1 class="m-0 text-dark"> Bienvenidos </h1>
                             </div><!-- /.col -->
                             <div class="col-sm-6">
+                                
                                 <ol class="breadcrumb float-sm-right">
-
-
 
                                 </ol>
                             </div><!-- /.col -->
