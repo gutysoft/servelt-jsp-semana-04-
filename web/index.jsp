@@ -1,7 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 19/05/2020, 07:09:51 PM
-    Author     : glabs
+    usuario: admin
+    password: 123456
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

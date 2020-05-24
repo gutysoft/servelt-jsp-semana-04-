@@ -79,7 +79,7 @@ public class AutenticacionController extends HttpServlet {
         
         String vista = "/login.jsp";
         
-        if (usuario.equals("gutylabs") && password.equals("123456") ) {
+        if (usuario.equals("usuario") && password.equals("123456") ) {
             vista = "/home.jsp";
         }
         
